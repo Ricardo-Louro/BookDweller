@@ -4,25 +4,23 @@ using Vector2 = UnityEngine.Vector2;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    [SerializeField] private float moveSpeed;
-    private float verticalInput;
-    private float horizontalInput;
-    private Vector2 moveDirection;
+    [SerializeField] private float          moveSpeed;
+    private Rigidbody2D                     rb;
+    private Vector2                         moveDirection;
 
 
 
     // Start is called before the first frame update
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();   
+        moveDirection = new Vector2(); 
     }
 
     // Update is called once per frame
     private void Update()
     {
-        ReceiveInputs();
-        moveDirection = CalculateMoveDirection();
+        SetMoveDirection();
     }
 
     private void FixedUpdate()
@@ -30,16 +28,10 @@ public class PlayerController : MonoBehaviour
         Move(moveDirection);
     }
 
-    private void ReceiveInputs()
+    private void SetMoveDirection()
     {
-        verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
-    }
-    private Vector2 CalculateMoveDirection()
-    {
-        Vector2 moveDirection = new Vector2(0,1) * verticalInput + new Vector2(1,0) * horizontalInput;
-        Debug.Log(moveDirection);
-        return moveDirection.normalized;
+        moveDirection.y = Input.GetAxis("Vertical");
+        moveDirection.x = Input.GetAxis("Horizontal");
     }
 
     private void Move(Vector2 moveDirection)
