@@ -14,6 +14,7 @@ public class BasicEnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerTransform = FindObjectOfType<PlayerController>().transform;
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _moveDirection = Vector2.zero;
     }
