@@ -16,8 +16,8 @@ public class PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        bulletScale.x = 1.0f;
-        bulletScale.y = 1.0f;
+        bulletScale.x = 0.5f;
+        bulletScale.y = 0.5f;
         ResetCooldown();
     }
 
