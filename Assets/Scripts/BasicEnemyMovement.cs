@@ -57,6 +57,6 @@ public class BasicEnemyMovement : MonoBehaviour
 
     private void UpdatePosition()
     {
-        _rigidbody.velocity = _moveDirection.normalized * (moveSpeed * Time.deltaTime);
+        _rigidbody.velocity = _moveDirection.normalized * (moveSpeed * Time.fixedDeltaTime);
     }
 }
