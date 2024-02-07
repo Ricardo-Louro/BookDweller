@@ -1,14 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1;
-    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float catchupDistance;
+    [SerializeField] private float defaultSpeed;
+    [SerializeField] private float catchupSpeed;
+    private float moveSpeed;
 
+    [SerializeField] private Transform playerTransform;
     private Rigidbody2D _rigidbody;
+
+    private float playerDistance = 0;
     private Vector2 _moveDirection;
     
     // Start is called before the first frame update
@@ -22,17 +24,39 @@ public class BasicEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetMoveDirection();
+        SetSpeed();
         UpdatePosition();
+    }
+
+    private void SetMoveDirection()
+    {
+        if (playerTransform is null) 
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
+        _moveDirection.x = playerTransform.position.x - transform.position.x;
+        _moveDirection.y = playerTransform.position.y - transform.position.y;
+    }
+
+    private void SetSpeed()
+    {
+        playerDistance = _moveDirection.magnitude;
+
+        if(playerDistance >= catchupDistance && moveSpeed != catchupSpeed)
+        {
+            moveSpeed = catchupSpeed;
+        }
+        else if(playerDistance <= catchupDistance && moveSpeed != defaultSpeed)
+        {
+            moveSpeed = defaultSpeed;
+        }
     }
 
     private void UpdatePosition()
     {
-        if (playerTransform is null) _rigidbody.velocity = Vector2.zero;
-        else
-        {
-            _moveDirection = playerTransform.position - transform.position;
-            _moveDirection = _moveDirection.normalized;
-            _rigidbody.velocity = _moveDirection * moveSpeed/ 100 / Time.deltaTime;
-        }
+        _rigidbody.velocity = _moveDirection.normalized * moveSpeed * Time.deltaTime;
     }
 }
