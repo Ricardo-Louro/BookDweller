@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2577225588106626494, guid: 29d796a791d85f64b838a13986564e86, type: 3}
-  cooldown: 2
+  cooldown: 1
 --- !u!114 &5124731332108826670
 MonoBehaviour:
   m_ObjectHideFlags: 0
