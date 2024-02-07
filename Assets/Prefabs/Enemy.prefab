@@ -181,10 +181,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 8918385373883670342}
-  _scoreSystem: {fileID: 0}
-  _xpSystem: {fileID: 0}
-  invulnerabilityDurationInSec: 0
+  invulnerabilityDurationInSec: 0.5
   invulnerabilityBlinkInterval: 0.1
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2, type: 3}
+        m_TargetAssemblyTypeName: UISystem, Assembly-CSharp
+        m_MethodName: UpdateScoreUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2, type: 3}
+        m_TargetAssemblyTypeName: UISystem, Assembly-CSharp
+        m_MethodName: UpdateXPUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7191398526756651447
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6311084954525703418}
   - component: {fileID: 2986918368854795356}
   - component: {fileID: 5124731332108826670}
+  - component: {fileID: 6417627107141720848}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -180,6 +181,24 @@ MonoBehaviour:
   stats: {fileID: 5124731332108826670}
   invulnerabilityDurationInSec: 2
   invulnerabilityBlinkInterval: 0.1
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2, type: 3}
+        m_TargetAssemblyTypeName: UISystem, Assembly-CSharp
+        m_MethodName: UpdateHPBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2986918368854795356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,3 +230,19 @@ MonoBehaviour:
   defaultHealthPoints: 5
   defaultMoveSpeed: 200
   experiencePoints: 0
+  maxHP: 5
+--- !u!114 &6417627107141720848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825681050866050279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cee76ead9c48f64caaccb3935c2e289, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentXP: 0
+  experienceGoal: 20
+  experienceGoalMultiPerLevel: 0
