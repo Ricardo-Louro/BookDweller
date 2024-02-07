@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
@@ -33,11 +35,13 @@ public class Spawner : MonoBehaviour
         currentHordeValue = 0;
         rotationVector = Vector3.zero;
         lastSpawnTime = float.MinValue;
+        StartCoroutine(DuplicateMaxHordeValue());
     }
 
     // Update is called once per frame
     private void Update()
     {
+        
         if(Time.time - lastSpawnTime > spawnCooldown && currentHordeValue < maxHordeValue)
         {
             Spawn();
@@ -91,6 +95,15 @@ public class Spawner : MonoBehaviour
         if(maxHordeValue - currentHordeValue > 0)
         {
             Spawn();
+        }
+    }
+
+    private IEnumerator DuplicateMaxHordeValue()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(10);
+            maxHordeValue *= 2;
         }
     }
 }
