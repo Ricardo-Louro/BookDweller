@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 640959319363027132}
-  catchupDistance: 5
+  catchupDistance: 10
   catchupSpeed: 500
   playerTransform: {fileID: 0}
 --- !u!114 &7429244320972300292
