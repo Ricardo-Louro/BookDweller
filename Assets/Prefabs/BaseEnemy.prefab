@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7191398526756651447}
   - component: {fileID: 8918385373883670342}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: BaseEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,5 +212,5 @@ MonoBehaviour:
   moveSpeed: 0
   defaultHealthPoints: 1
   defaultMoveSpeed: 100
-  spawnValue: 0
-  scoreValue: 0
+  spawnValue: 1
+  scoreValue: 10
