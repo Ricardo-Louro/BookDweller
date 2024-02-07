@@ -42,6 +42,12 @@ public class Damageable : MonoBehaviour
     private void GetHit(int damageReceived)
     {
         stats.HP -= damageReceived;
+
+        if (name == "Player")
+        {
+            _uiSystem.UpdateHPBar();
+        }
+        
         print($"{name} got damaged! Current HP: {stats.HP}");
         
         if (stats.HP <= 0)
