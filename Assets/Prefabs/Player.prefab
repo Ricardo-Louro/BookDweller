@@ -175,4 +175,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPoints: 1
+  healthPoints: 5
+  invulnerabilityDurationInSec: 2
