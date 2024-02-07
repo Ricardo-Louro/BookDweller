@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c56e7fee8ef0e4abddd082664d6a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRadius: 0
+  spawnRadius: 10
   enemyTypes:
   - {fileID: 3188632438482870798, guid: 2580fde7d4711394f839d54a18d6e1d9, type: 3}
   initialMaxHordeValue: 5
