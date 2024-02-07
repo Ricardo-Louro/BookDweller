@@ -50,6 +50,7 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
+        spawnRadius = Random.Range(10,30);
         lastSpawnTime = Time.time;
 
         possibleEnemies.Clear();
