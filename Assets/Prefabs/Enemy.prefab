@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 8918385373883670342}
+  _scoreSystem: {fileID: 0}
+  _xpSystem: {fileID: 0}
   invulnerabilityDurationInSec: 0
   invulnerabilityBlinkInterval: 0.1
 --- !u!114 &7191398526756651447
@@ -213,4 +215,4 @@ MonoBehaviour:
   defaultHealthPoints: 1
   defaultMoveSpeed: 100
   spawnValue: 0
-  scoreValue: 0
+  scoreValue: 10
