@@ -641,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInstance: {fileID: 0}
+  scoreSystem: {fileID: 6963567432972050842, guid: f986de020aefc7d4db4837977b3f9955, type: 3}
   XPBar: {fileID: 577959700932650974}
   Score: {fileID: 2339926851239375730}
   HPBar: {fileID: 6159475475373360355}

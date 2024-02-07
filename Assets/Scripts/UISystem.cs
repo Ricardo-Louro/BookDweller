@@ -19,6 +19,7 @@ public class UISystem : MonoBehaviour
     private void Start()
     {
         playerInstance = FindObjectOfType<PlayerMovement>().gameObject;
+        _scoreSystem = FindObjectOfType<ScoreSystem>();
         
         _playerXp = playerInstance.GetComponent<PlayerXP>();
         _playerStats = playerInstance.GetComponent<PlayerStats>();
