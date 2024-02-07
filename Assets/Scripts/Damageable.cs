@@ -5,24 +5,29 @@ using UnityEngine;
 public class Damageable : MonoBehaviour
 {
     [SerializeField] private Stats stats;
+    private ScoreSystem _scoreSystem;
+    private PlayerXP _xpSystem;
     [SerializeField] private float invulnerabilityDurationInSec = 0.5f;
     [SerializeField] private float invulnerabilityBlinkInterval = 0.1f;
 
-    private Damaging _incomingDamaging;
+    private GameObject _collidingObject;
     private bool _invulnerable;
     private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _xpSystem = FindObjectOfType<PlayerXP>();
+        _scoreSystem = FindObjectOfType<ScoreSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         try
         {
-            _incomingDamaging = other.GetComponent<Damaging>();
-            if(!_invulnerable) GetHit(_incomingDamaging.DamagePerHit);
+            _collidingObject = other.gameObject;
+            Damaging incomingDamaging = _collidingObject.GetComponent<Damaging>();
+            if(!_invulnerable) GetHit(incomingDamaging.DamagePerHit);
         }
         catch (Exception)
         {
@@ -36,8 +41,14 @@ public class Damageable : MonoBehaviour
         print($"{name} got damaged! Current HP: {stats.HP}");
         if (stats.HP <= 0)
         {
-            print($"{name} is out of HP!");
-            return;
+            
+            if (name != "Player")
+            {
+                ComputeScore();
+                ComputeXp();
+            }
+            
+            Destroy(gameObject);
         }
         StartInvulnerability();
     }
@@ -60,5 +71,15 @@ public class Damageable : MonoBehaviour
         
         _invulnerable = false;
         _spriteRenderer.enabled = true;
+    }
+
+    private void ComputeScore()
+    {
+        _scoreSystem.AddScore(GetComponent<EnemyStats>().ScoreValue);
+    }
+
+    private void ComputeXp()
+    {
+        _xpSystem.GainXP(GetComponent<EnemyStats>().ScoreValue);
     }
 }

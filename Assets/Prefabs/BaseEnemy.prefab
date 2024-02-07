@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 8918385373883670342}
+  _scoreSystem: {fileID: 0}
+  _xpSystem: {fileID: 0}
   invulnerabilityDurationInSec: 0
   invulnerabilityBlinkInterval: 0.1
 --- !u!114 &7191398526756651447
@@ -212,5 +214,9 @@ MonoBehaviour:
   moveSpeed: 0
   defaultHealthPoints: 1
   defaultMoveSpeed: 100
+<<<<<<< HEAD:Assets/Prefabs/BaseEnemy.prefab
   spawnValue: 1
+=======
+  spawnValue: 0
+>>>>>>> f1fb711fbc09c96f6381122b3fab32b65e7c3dd2:Assets/Prefabs/Enemy.prefab
   scoreValue: 10

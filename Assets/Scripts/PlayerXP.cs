@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class PlayerXP : MonoBehaviour
 {
+    [SerializeField] private UISystem _uiSystem;
+    [SerializeField] private int experienceGoal;
+    
     private int currentXP;
-    private int experienceGoal;
+    private int experienceGoalMultiPerLevel;
 
     // Start is called before the first frame update
     private void Start()
@@ -18,7 +21,12 @@ public class PlayerXP : MonoBehaviour
         if(currentXP >= experienceGoal)
         {
             LevelUp();
+
+            experienceGoal *= experienceGoalMultiPerLevel;
+            currentXP = 0;
         }
+
+        _uiSystem.UpdateXPUI(experienceGoal, currentXP);
     }
 
     private void LevelUp()
