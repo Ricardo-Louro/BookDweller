@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerXP : MonoBehaviour
 {
     [SerializeField] private UISystem _uiSystem;
+    [SerializeField] private int experienceGoal;
     
     private int currentXP;
-    private int experienceGoal;
     private int experienceGoalMultiPerLevel;
 
     // Start is called before the first frame update
