@@ -7,7 +7,7 @@ public class BasicEnemyMovement : MonoBehaviour
     [SerializeField] private float catchupSpeed;
     private float moveSpeed;
 
-    [SerializeField] private Transform playerTransform;
+    private Transform playerTransform;
     private Rigidbody2D _rigidbody;
 
     private float playerDistance = 0;

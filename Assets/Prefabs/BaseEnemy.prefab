@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7191398526756651447}
   - component: {fileID: 8918385373883670342}
   m_Layer: 8
-  m_Name: Enemy
+  m_Name: BaseEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,7 +141,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
+    type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -167,7 +168,6 @@ MonoBehaviour:
   stats: {fileID: 8918385373883670342}
   catchupDistance: 10
   catchupSpeed: 500
-  playerTransform: {fileID: 0}
 --- !u!114 &7429244320972300292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,8 @@ MonoBehaviour:
   OnDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2, type: 3}
+      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2,
+          type: 3}
         m_TargetAssemblyTypeName: UISystem, Assembly-CSharp
         m_MethodName: UpdateScoreUI
         m_Mode: 1
@@ -198,7 +199,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2, type: 3}
+      - m_Target: {fileID: 6861123480775950973, guid: a7005e8ecf317f34984a179fd6ed42c2,
+          type: 3}
         m_TargetAssemblyTypeName: UISystem, Assembly-CSharp
         m_MethodName: UpdateXPUI
         m_Mode: 1
@@ -242,5 +244,5 @@ MonoBehaviour:
   moveSpeed: 0
   defaultHealthPoints: 1
   defaultMoveSpeed: 100
-  spawnValue: 0
-  scoreValue: 10
+  spawnValue: 1
+  scoreValue: 100
