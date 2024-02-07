@@ -1,24 +1,28 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
     [SerializeField] private Stats stats;
-    private ScoreSystem _scoreSystem;
-    private PlayerXP _xpSystem;
     [SerializeField] private float invulnerabilityDurationInSec = 0.5f;
     [SerializeField] private float invulnerabilityBlinkInterval = 0.1f;
 
     private GameObject _collidingObject;
     private bool _invulnerable;
     private SpriteRenderer _spriteRenderer;
+    
+    private UISystem _uiSystem;
+    private ScoreSystem _scoreSystem;
+    private PlayerXP _xpSystem;
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _xpSystem = FindObjectOfType<PlayerXP>();
         _scoreSystem = FindObjectOfType<ScoreSystem>();
+        _uiSystem = FindObjectOfType<UISystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +43,7 @@ public class Damageable : MonoBehaviour
     {
         stats.HP -= damageReceived;
         print($"{name} got damaged! Current HP: {stats.HP}");
+        
         if (stats.HP <= 0)
         {
             
@@ -50,6 +55,7 @@ public class Damageable : MonoBehaviour
             
             Destroy(gameObject);
         }
+        
         StartInvulnerability();
     }
 
@@ -76,10 +82,12 @@ public class Damageable : MonoBehaviour
     private void ComputeScore()
     {
         _scoreSystem.AddScore(GetComponent<EnemyStats>().ScoreValue);
+        _uiSystem.UpdateScoreUI();
     }
 
     private void ComputeXp()
     {
         _xpSystem.GainXP(GetComponent<EnemyStats>().ScoreValue);
+        _uiSystem.UpdateXPUI();
     }
 }
