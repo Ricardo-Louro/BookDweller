@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3173604563339205104}
   - component: {fileID: 7429244320972300292}
   - component: {fileID: 7191398526756651447}
-  - component: {fileID: 640959319363027132}
+  - component: {fileID: 8918385373883670342}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c42a754d0a7772429fdf93e82d83fb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 640959319363027132}
+  stats: {fileID: 8918385373883670342}
   catchupDistance: 10
   catchupSpeed: 500
   playerTransform: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 640959319363027132}
+  stats: {fileID: 8918385373883670342}
   invulnerabilityDurationInSec: 0
   invulnerabilityBlinkInterval: 0.1
 --- !u!114 &7191398526756651447
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerHit: 1
---- !u!114 &640959319363027132
+--- !u!114 &8918385373883670342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,10 +205,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3188632438482870798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674f5c1e54614db47a0978382e4cfdbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 95bf223d016146b4afe38ca971fe51e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 0
   moveSpeed: 0
   defaultHealthPoints: 1
   defaultMoveSpeed: 100
+  spawnValue: 0
+  scoreValue: 0
