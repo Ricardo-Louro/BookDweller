@@ -12,6 +12,7 @@ public class BasicEnemyMovement : MonoBehaviour
 
     private float playerDistance = 0;
     private Vector2 _moveDirection;
+    private float _defaultXScale;
     
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,14 @@ public class BasicEnemyMovement : MonoBehaviour
         playerTransform = FindObjectOfType<PlayerMovement>().transform;
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _moveDirection = Vector2.zero;
+        _defaultXScale = transform.localScale.x;
     }
 
     // Update is called once per frame
     void Update()
     {
         SetMoveDirection();
+        SetFacingDirection();
         SetSpeed();
         UpdatePosition();
     }
@@ -39,6 +42,18 @@ public class BasicEnemyMovement : MonoBehaviour
 
         _moveDirection.x = playerTransform.position.x - transform.position.x;
         _moveDirection.y = playerTransform.position.y - transform.position.y;
+    }
+
+    private void SetFacingDirection()
+    {
+        if (playerTransform.position.x < transform.position.x)
+            transform.localScale = new Vector3(_defaultXScale,
+                transform.localScale.y, transform.localScale.z);
+        else
+        {
+            transform.localScale = new Vector3(-_defaultXScale,
+                transform.localScale.y, transform.localScale.z);
+        }
     }
 
     private void SetSpeed()
