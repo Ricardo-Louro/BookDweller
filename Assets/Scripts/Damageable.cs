@@ -27,16 +27,9 @@ public class Damageable : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        try
-        {
-            _collidingObject = other.gameObject;
-            Damaging incomingDamaging = _collidingObject.GetComponent<Damaging>();
-            if(!_invulnerable) GetHit(incomingDamaging.DamagePerHit);
-        }
-        catch (Exception)
-        {
-            
-        }
+        _collidingObject = other.gameObject;
+        Damaging incomingDamaging = _collidingObject.GetComponent<Damaging>();
+        if(!_invulnerable) GetHit(incomingDamaging.DamagePerHit);
     }
     
     private void GetHit(int damageReceived)

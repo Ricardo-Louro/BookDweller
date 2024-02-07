@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
@@ -15,15 +15,18 @@ public class Spawner : MonoBehaviour
     private Vector3                             rotationVector;
     [SerializeField] private float              spawnRadius;
     [SerializeField] private GameObject[]       enemyTypes;
-    [SerializeField] private int                initialMaxHordeValue;
+    [SerializeField] private float              initialMaxHordeValue;
+    [SerializeField] private float              hordeIncreasingMultiplier;
 
-    private int maxHordeValue;
+    private float maxHordeValue;
     private int currentHordeValue;
 
     private float spawnCooldown;
     private float lastSpawnTime;
 
     private IList<GameObject> possibleEnemies;
+
+    private bool endOfRecursion;
 
     // Start is called before the first frame update
     private void Start()
@@ -50,6 +53,8 @@ public class Spawner : MonoBehaviour
 
     private void Spawn()
     {
+        endOfRecursion = false;
+
         spawnRadius = Random.Range(10,30);
         lastSpawnTime = Time.time;
 
@@ -70,7 +75,12 @@ public class Spawner : MonoBehaviour
 
         Vector2 spawnLocation = player.transform.position + rotationVector.normalized * spawnRadius;
         GameObject chosenEnemy;
-
+        
+        if(possibleEnemies.Count == 0)
+        {
+            endOfRecursion = true;
+            chosenEnemy = null;
+        }
         if(possibleEnemies.Count == 1)
         {
             chosenEnemy = Instantiate(possibleEnemies[0],
@@ -91,10 +101,9 @@ public class Spawner : MonoBehaviour
                                       new Quaternion(0,0,0,0));
         }
 
-        currentHordeValue += chosenEnemy.GetComponent<EnemyStats>().SpawnValue;
-
-        if(maxHordeValue - currentHordeValue > 0)
+        if(!endOfRecursion)
         {
+            currentHordeValue += chosenEnemy.GetComponent<EnemyStats>().SpawnValue;
             Spawn();
         }
     }
@@ -104,7 +113,7 @@ public class Spawner : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(10);
-            maxHordeValue *= 2;
+            maxHordeValue *= hordeIncreasingMultiplier;
         }
     }
 }

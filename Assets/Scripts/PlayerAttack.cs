@@ -10,7 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private float cooldown;
     private float lastTimeAttacked;
-    private float bulletScaleRatio;
+    [SerializeField] private float bulletScaleRatio;
     private Vector3 bulletScale = Vector3.zero;
 
     // Start is called before the first frame update

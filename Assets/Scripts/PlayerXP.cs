@@ -32,17 +32,17 @@ public class PlayerXP : MonoBehaviour
     {
         currentXP += experience;
 
-        if (currentXP < experienceGoal) return;
-        
-        LevelUp();
-        
-        experienceGoal *= experienceGoalMultiPerLevel;
-        currentXP = 0;
+        if (currentXP >= experienceGoal)
+        {
+            LevelUp();
+        }
     }
 
     private void LevelUp()
     {
         playerAttack.UpgradeBulletScale();
+        experienceGoal *= experienceGoalMultiPerLevel;
+        currentXP = 0;
     }
 
 
