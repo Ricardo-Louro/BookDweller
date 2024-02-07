@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerXP : MonoBehaviour
 {
+    [SerializeField] private UISystem _uiSystem;
+    
     private int currentXP;
     private int experienceGoal;
     private int experienceGoalMultiPerLevel;
@@ -24,16 +26,11 @@ public class PlayerXP : MonoBehaviour
             currentXP = 0;
         }
 
-        UpdateXPUI();
+        _uiSystem.UpdateXPUI(experienceGoal, currentXP);
     }
 
     private void LevelUp()
     {
         //LEVEL UP!
-    }
-
-    private void UpdateXPUI()
-    {
-        
     }
 }

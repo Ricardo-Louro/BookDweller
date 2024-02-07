@@ -5,17 +5,15 @@ using UnityEngine;
 public class ScoreSystem : MonoBehaviour
 {
     [SerializeField] private int score;
+    [SerializeField] private UISystem _uiSystem;
 
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
-        UpdateScoreUI();
+        _uiSystem.UpdateScoreUI(score);
     }
 
     public int GetScore() => score;
 
-    private void UpdateScoreUI()
-    {
-        
-    }
+    
 }
