@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class BasicEnemyMovement : MonoBehaviour
 {
+    [SerializeField] private Stats stats;
     [SerializeField] private float catchupDistance;
-    [SerializeField] private float defaultSpeed;
     [SerializeField] private float catchupSpeed;
     private float moveSpeed;
 
@@ -49,14 +49,14 @@ public class BasicEnemyMovement : MonoBehaviour
         {
             moveSpeed = catchupSpeed;
         }
-        else if(playerDistance <= catchupDistance && moveSpeed != defaultSpeed)
+        else if(playerDistance <= catchupDistance && moveSpeed != stats.MoveSpeed)
         {
-            moveSpeed = defaultSpeed;
+            moveSpeed = stats.MoveSpeed;
         }
     }
 
     private void UpdatePosition()
     {
-        _rigidbody.velocity = _moveDirection.normalized * moveSpeed * Time.deltaTime;
+        _rigidbody.velocity = _moveDirection.normalized * (moveSpeed * Time.deltaTime);
     }
 }

@@ -4,7 +4,7 @@ using Vector2 = UnityEngine.Vector2;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float          moveSpeed;
+    [SerializeField] private Stats          stats;
     private Rigidbody2D                     rb;
     private Vector2                         moveDirection;
 
@@ -36,6 +36,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 moveDirection)
     {
-        rb.velocity = moveDirection * moveSpeed * Time.fixedDeltaTime;
+        rb.velocity = moveDirection * (stats.MoveSpeed * Time.fixedDeltaTime);
     }
 }

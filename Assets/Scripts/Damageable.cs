@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    [SerializeField] private int healthPoints = 1;
-    [SerializeField] private float invulnerabilityDurationInSec;
+    [SerializeField] private Stats stats;
+    [SerializeField] private float invulnerabilityDurationInSec = 0.5f;
+    [SerializeField] private float invulnerabilityBlinkInterval = 0.1f;
 
     private Damaging _incomingDamaging;
     private bool _invulnerable;
@@ -32,9 +32,9 @@ public class Damageable : MonoBehaviour
     
     private void GetHit(int damageReceived)
     {
-        healthPoints -= damageReceived;
-        print($"{name} got damaged!");
-        if (healthPoints <= 0)
+        stats.HP -= damageReceived;
+        print($"{name} got damaged! Current HP: {stats.HP}");
+        if (stats.HP <= 0)
         {
             print($"{name} is out of HP!");
             return;
@@ -51,15 +51,14 @@ public class Damageable : MonoBehaviour
     {
         _invulnerable = true;
         
-        for (float i = 0; i < invulnerabilityDurationInSec; i += 0.15f)
+        for (float i = 0; i < invulnerabilityDurationInSec; i += invulnerabilityBlinkInterval)
         {
             _spriteRenderer.enabled = !_spriteRenderer.enabled;
             
-            yield return new WaitForSeconds(0.15f);
-            
+            yield return new WaitForSeconds(invulnerabilityBlinkInterval);
+        }
+        
         _invulnerable = false;
         _spriteRenderer.enabled = true;
-        
-        }
     }
 }
