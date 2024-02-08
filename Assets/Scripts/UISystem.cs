@@ -31,7 +31,7 @@ public class UISystem : MonoBehaviour
         XPBar.maxValue = _playerXp.ExperienceGoal;
         XPBar.value = _playerXp.CurrentXp;
 
-        LVLCounter.text = $"LVL: {_playerStats.LVL}";
+        LVLCounter.text = $"LVL {_playerStats.LVL}";
     }
 
     public void UpdateScoreUI()
