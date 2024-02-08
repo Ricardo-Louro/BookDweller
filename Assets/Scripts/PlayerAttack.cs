@@ -48,9 +48,8 @@ public class PlayerAttack : MonoBehaviour
         obj.transform.localScale = bulletScale;
     }
 
-    public void UpgradeBulletScale()
+    public void UpgradeCooldown()
     {
-        bulletScale.x *= bulletScaleRatio;
-        bulletScale.y *= bulletScaleRatio;
+        cooldown *= 0.5f;
     }
 }

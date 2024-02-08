@@ -472,6 +472,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
+      propertyPath: spawnRadius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
+      propertyPath: spawnCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
+      propertyPath: hordeIncreasingMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6318273808591839965, guid: a139261e407fa58469275cd9d28f439f, type: 3}
       propertyPath: m_Name
       value: Spawner
@@ -494,6 +506,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2986918368854795356, guid: a991d3247b119d147b599e7c0058b799, type: 3}
+      propertyPath: bulletScaleRatio
+      value: 1.025
+      objectReference: {fileID: 0}
     - target: {fileID: 4825681050866050279, guid: a991d3247b119d147b599e7c0058b799, type: 3}
       propertyPath: m_Name
       value: Player

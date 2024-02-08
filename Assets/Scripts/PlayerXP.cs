@@ -42,7 +42,7 @@ public class PlayerXP : MonoBehaviour
 
     private void LevelUp()
     {
-        playerAttack.UpgradeBulletScale();
+        playerAttack.UpgradeCooldown();
 
         _playerStats.LVL += 1;
         experienceGoal *= experienceGoalMultiPerLevel;
