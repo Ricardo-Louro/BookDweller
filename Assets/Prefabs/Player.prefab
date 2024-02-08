@@ -213,6 +213,7 @@ MonoBehaviour:
   moveSpeed: 0
   defaultHealthPoints: 5
   defaultMoveSpeed: 200
+  lvl: 1
   experiencePoints: 0
   maxHP: 5
 --- !u!114 &6417627107141720848
@@ -227,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cee76ead9c48f64caaccb3935c2e289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerStats: {fileID: 5124731332108826670}
   currentXP: 0
   experienceGoal: 500
   experienceGoalMultiPerLevel: 2
