@@ -66,6 +66,8 @@ public class Spawner : MonoBehaviour
                 Vector2 spawnLocation = player.transform.position + rotationVector.normalized * spawnRadius;
                 GameObject chosenEnemy;
                 
+                Debug.Log("Possible Enemies Count:" + possibleEnemies.Count);
+                Debug.Log("Current Horde Value: " + currentHordeValue);
                 if(possibleEnemies.Count == 0)
                 {
                     endOfLoop = true;
@@ -90,6 +92,13 @@ public class Spawner : MonoBehaviour
                                                         0),
                                             new Quaternion(0,0,0,0));
                 }
+
+                if(chosenEnemy is not null)
+                {
+                    currentHordeValue += chosenEnemy.GetComponent<EnemyStats>().SpawnValue;
+                }
+
+                yield return new WaitForSeconds(0.0001f);
             }
         }
     }
@@ -101,5 +110,10 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(10);
             maxHordeValue *= hordeIncreasingMultiplier;
         }
+    }
+
+    public void DeducteHordeValue(int value)
+    {
+        currentHordeValue -= value;
     }
 }
