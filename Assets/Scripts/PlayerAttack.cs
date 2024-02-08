@@ -12,9 +12,13 @@ public class PlayerAttack : MonoBehaviour
     private bool                                bigShotUnlock;
     [SerializeField] private GameObject         bigShot;
     [SerializeField] private float              basicCooldown;
+    [SerializeField] private float              bigCooldown;
+    
     private float                               lastTimeBasicAttacked;
+    private float                               lastTimeBigAttacked;
     private Vector3                             bigShotScale = Vector3.zero;
-    [SerializeField] private float              cooldownUpgradeRatio;
+    [SerializeField] private float              bigShotScaleUpgradeRatio;
+    [SerializeField] private float              basicCooldownUpgradeRatio;
 
     // Start is called before the first frame update
     private void Start()
@@ -34,12 +38,23 @@ public class PlayerAttack : MonoBehaviour
             BasicAttack();
         }
 
-        i
+        if(bigShotUnlock)
+        {
+            if(CheckBigCooldown())
+            {
+                ResetBigCooldown();
+                BigAttack();
+            }
+        }
     }
 
     private bool CheckBasicCooldown()
     {
         return basicCooldown < Time.time - lastTimeBasicAttacked;
+    }
+    private bool CheckBigCooldown()
+    {
+        return bigCooldown < Time.time - lastTimeBigAttacked;
     }
 
     private void ResetBasicCooldown()
@@ -47,13 +62,34 @@ public class PlayerAttack : MonoBehaviour
         lastTimeBasicAttacked = Time.time;
     }
 
+    private void ResetBigCooldown()
+    {
+        lastTimeBigAttacked = Time.time;
+    }
+
     private void BasicAttack()
     {
         GameObject obj_basicShot = Instantiate(basicShot, transform.position, Quaternion.identity);
     }
 
+    private void BigAttack()
+    {
+        GameObject obj_bigShot = Instantiate(bigShot, transform.position, Quaternion.identity);
+        obj_bigShot.transform.localScale = bigShotScale;
+    }
+
     public void UpgradeBasicCooldown()
     {
-        basicCooldown *= cooldownUpgradeRatio;
+        basicCooldown *= basicCooldownUpgradeRatio;
+    }
+
+    public void UpgradeBigScale()
+    {
+        bigShotScale *= bigShotScaleUpgradeRatio;
+    }
+
+    public void UnlockBigShot()
+    {
+        bigShotUnlock = true;
     }
 }

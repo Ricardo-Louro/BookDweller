@@ -9,6 +9,8 @@ public class PlayerXP : MonoBehaviour
     [SerializeField] private int                currentXP;
     [SerializeField] private int                experienceGoal;
     [SerializeField] private int                experienceGoalMultiPerLevel;
+    private int                                 currentLevel;
+    [SerializeField] private int                bigShotUnlockLevel;
 
     [SerializeField] private PlayerAttack       playerAttack;
 
@@ -28,6 +30,7 @@ public class PlayerXP : MonoBehaviour
     private void Start()
     {
         currentXP = 0;    
+        currentLevel = 1;
     }
 
     public void GainXP(int experience)
@@ -42,7 +45,19 @@ public class PlayerXP : MonoBehaviour
 
     private void LevelUp()
     {
+        currentLevel++;
+
+        if(currentLevel == bigShotUnlockLevel)
+        {
+            playerAttack.UnlockBigShot();
+        }
+
         playerAttack.UpgradeBasicCooldown();
+
+        if(currentLevel >= bigShotUnlockLevel)
+        {
+            playerAttack.UpgradeBigScale();
+        }
 
         _playerStats.LVL += 1;
         experienceGoal *= experienceGoalMultiPerLevel;
