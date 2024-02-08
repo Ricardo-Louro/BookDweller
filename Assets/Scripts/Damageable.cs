@@ -39,6 +39,7 @@ public class Damageable : MonoBehaviour
         if (name == "Player")
         {
             _uiSystem.UpdateHPBar();
+            gameObject.GetComponent<Animator>().SetTrigger("Hurt");
         }
         
         print($"{name} got damaged! Current HP: {stats.HP}");

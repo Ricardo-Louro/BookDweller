@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuBehaviour : MonoBehaviour
 {
@@ -9,16 +10,23 @@ public class MenuBehaviour : MonoBehaviour
 
     public void ExitButton()
     {
-        
+        Application.Quit();
     }
 
-    public void SettingsButtons()
+    public void SettingsButton()
     {
-        
+        MainMenuCanvas.gameObject.SetActive(false); 
+        SettingsCanvas.gameObject.SetActive(true);
+    }
+
+    public void ReturnFromSettingsButton()
+    {
+        MainMenuCanvas.gameObject.SetActive(true);
+        SettingsCanvas.gameObject.SetActive(false);
     }
 
     public void StartGameButton()
     {
-        
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Gameplay");
     }
 }

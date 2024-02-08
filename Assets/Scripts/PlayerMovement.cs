@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D                     rb;
     private Vector2                         moveDirection;
     private Vector2                         lastDirection;
+    private float initialXScale;
+    private Animator animator;
 
 
 
@@ -17,12 +19,15 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();   
         moveDirection = new Vector2();
         lastDirection = new Vector2(1,0);
+        initialXScale = transform.localScale.x;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void Update()
     {
         SetMoveDirection();
+        SetFacingDirection();
         UpdateLastDirection();
     }
 
@@ -37,9 +42,23 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.x = Input.GetAxis("Horizontal");
     }
 
+    private void SetFacingDirection()
+    {
+        transform.localScale = moveDirection.x switch
+        {
+            > 0 => new Vector3(initialXScale, transform.localScale.y,
+                transform.localScale.z),
+            < 0 => new Vector3(-initialXScale, transform.localScale.y,
+                transform.localScale.z),
+            _ => transform.localScale
+        };
+    }
+
     private void Move(Vector2 moveDirection)
     {
         rb.velocity = moveDirection * (stats.MoveSpeed * Time.fixedDeltaTime);
+        
+        animator.SetBool("Walking", this.moveDirection.magnitude > 0);
     }
 
     public Vector2 GetLastDirection()
