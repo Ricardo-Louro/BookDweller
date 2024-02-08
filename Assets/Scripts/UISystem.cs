@@ -9,6 +9,7 @@ public class UISystem : MonoBehaviour
 {
     [SerializeField] private GameObject playerInstance;
     [SerializeField] private Slider XPBar;
+    [SerializeField] private TMP_Text LVLCounter;
     [SerializeField] private TMP_Text Score;
     [SerializeField] private Slider HPBar;
 
@@ -29,6 +30,8 @@ public class UISystem : MonoBehaviour
     {
         XPBar.maxValue = _playerXp.ExperienceGoal;
         XPBar.value = _playerXp.CurrentXp;
+
+        LVLCounter.text = $"LVL: {_playerStats.LVL}";
     }
 
     public void UpdateScoreUI()

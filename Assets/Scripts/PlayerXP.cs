@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class PlayerXP : MonoBehaviour
 {
+    [SerializeField] private PlayerStats _playerStats;
+    
     [SerializeField] private int                currentXP;
     [SerializeField] private int                experienceGoal;
     [SerializeField] private int                experienceGoalMultiPerLevel;
@@ -41,6 +43,8 @@ public class PlayerXP : MonoBehaviour
     private void LevelUp()
     {
         playerAttack.UpgradeBulletScale();
+
+        _playerStats.LVL += 1;
         experienceGoal *= experienceGoalMultiPerLevel;
         currentXP = 0;
     }
