@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 8918385373883670342}
   - component: {fileID: -1143721902813994820}
   m_Layer: 8
-  m_Name: BaseEnemy
-  m_TagString: Untagged
+  m_Name: Enemy_5
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 54956443, guid: 7a8a45cef14761a4fb0bc1d938a6f00b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21176457, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 8918385373883670342}
-  invulnerabilityDurationInSec: 0.5
+  invulnerabilityDurationInSec: 0.01
   invulnerabilityBlinkInterval: 0.1
 --- !u!114 &7191398526756651447
 MonoBehaviour:
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dc749203bc47d418a0fafec6eb3789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePerHit: 1
+  damagePerHit: 2
 --- !u!114 &8918385373883670342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,10 +210,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 0
   moveSpeed: 0
-  defaultHealthPoints: 1
-  defaultMoveSpeed: 100
-  spawnValue: 1
-  scoreValue: 100
+  defaultHealthPoints: 3
+  defaultMoveSpeed: 90
+  spawnValue: 5
+  scoreValue: 500
 --- !u!95 &-1143721902813994820
 Animator:
   serializedVersion: 5

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
+    private Spawner spawner;
     [SerializeField] private Stats stats;
     [SerializeField] private float invulnerabilityDurationInSec = 0.5f;
     [SerializeField] private float invulnerabilityBlinkInterval = 0.1f;
@@ -19,6 +20,7 @@ public class Damageable : MonoBehaviour
 
     private void Start()
     {
+        spawner = FindObjectOfType<Spawner>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _xpSystem = FindObjectOfType<PlayerXP>();
         _scoreSystem = FindObjectOfType<ScoreSystem>();
@@ -42,15 +44,19 @@ public class Damageable : MonoBehaviour
             gameObject.GetComponentInChildren<Animator>().SetTrigger("Hurt");
         }
         
-        print($"{name} got damaged! Current HP: {stats.HP}");
-        
         if (stats.HP <= 0)
         {
             
-            if (name != "Player")
+            if(tag is "Enemy")
             {
+                spawner.ShowHordeValue();
+                Debug.Log("TRYING TO COMPUTE SCORE");
                 ComputeScore();
+                spawner.ShowHordeValue();
+                Debug.Log("TRYING TO COMPUTE XP");
                 ComputeXp();
+                Debug.Log("TRYING TO DEDUCT!");
+                spawner.DeductHordeValue((stats as EnemyStats).SpawnValue);
             }
             
             Destroy(gameObject);

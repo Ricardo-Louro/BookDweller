@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5385851759128601408}
   - component: {fileID: 4150793954376297276}
   - component: {fileID: 7307013079085011510}
+  - component: {fileID: -1943146423944713964}
+  - component: {fileID: -1608274836719737524}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
@@ -126,6 +128,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerHit: 1
+--- !u!114 &-1943146423944713964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2577225588106626494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
+  stats: {fileID: -1608274836719737524}
+  invulnerabilityDurationInSec: 0
+  invulnerabilityBlinkInterval: 0
+--- !u!114 &-1608274836719737524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2577225588106626494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674f5c1e54614db47a0978382e4cfdbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 0
+  moveSpeed: 0
+  defaultHealthPoints: 1
+  defaultMoveSpeed: 1
 --- !u!1 &6822002690035268824
 GameObject:
   m_ObjectHideFlags: 0

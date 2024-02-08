@@ -7,15 +7,15 @@ using UnityEngine.UI;
 
 public class UISystem : MonoBehaviour
 {
-    [SerializeField] private GameObject playerInstance;
-    [SerializeField] private Slider XPBar;
-    [SerializeField] private TMP_Text LVLCounter;
-    [SerializeField] private TMP_Text Score;
-    [SerializeField] private Slider HPBar;
+    private GameObject                      playerInstance;
+    [SerializeField] private Slider         XPBar;
+    [SerializeField] private TMP_Text       LVLCounter;
+    [SerializeField] private TMP_Text       Score;
+    [SerializeField] private Slider         HPBar;
 
-    private ScoreSystem _scoreSystem;
-    private PlayerXP _playerXp;
-    private PlayerStats _playerStats;
+    private ScoreSystem                     _scoreSystem;
+    private PlayerXP                        _playerXp;
+    private PlayerStats                     _playerStats;
 
     private void Start()
     {
