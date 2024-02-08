@@ -49,13 +49,8 @@ public class Damageable : MonoBehaviour
             
             if(tag is "Enemy")
             {
-                spawner.ShowHordeValue();
-                Debug.Log("TRYING TO COMPUTE SCORE");
                 ComputeScore();
-                spawner.ShowHordeValue();
-                Debug.Log("TRYING TO COMPUTE XP");
                 ComputeXp();
-                Debug.Log("TRYING TO DEDUCT!");
                 spawner.DeductHordeValue((stats as EnemyStats).SpawnValue);
             }
             
