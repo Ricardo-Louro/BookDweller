@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -9,12 +10,14 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D                     rb;
     private Vector2                         direction;
     [SerializeField] private float          maxDistance;
+    [SerializeField] private GameObject model;
 
     // Start is called before the first frame update
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         direction = player.GetComponent<PlayerMovement>().GetLastDirection().normalized;
+        model.transform.eulerAngles = new Vector3(0,0,Mathf.Acos(Vector2.Dot(Vector2.left, direction) /(1 * direction.magnitude)) * Mathf.Rad2Deg );
         rb = GetComponent<Rigidbody2D>();    
     }
 

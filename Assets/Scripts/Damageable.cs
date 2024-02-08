@@ -19,7 +19,7 @@ public class Damageable : MonoBehaviour
 
     private void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _xpSystem = FindObjectOfType<PlayerXP>();
         _scoreSystem = FindObjectOfType<ScoreSystem>();
         _uiSystem = FindObjectOfType<UISystem>();
@@ -39,7 +39,7 @@ public class Damageable : MonoBehaviour
         if (name == "Player")
         {
             _uiSystem.UpdateHPBar();
-            gameObject.GetComponent<Animator>().SetTrigger("Hurt");
+            gameObject.GetComponentInChildren<Animator>().SetTrigger("Hurt");
         }
         
         print($"{name} got damaged! Current HP: {stats.HP}");

@@ -5,6 +5,7 @@ using Vector2 = UnityEngine.Vector2;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private Stats          stats;
+    [SerializeField] private GameObject     model;
     private Rigidbody2D                     rb;
     private Vector2                         moveDirection;
     private Vector2                         lastDirection;
@@ -46,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.localScale = moveDirection.x switch
         {
-            > 0 => new Vector3(initialXScale, transform.localScale.y,
-                transform.localScale.z),
-            < 0 => new Vector3(-initialXScale, transform.localScale.y,
-                transform.localScale.z),
-            _ => transform.localScale
+            > 0 => new Vector3(initialXScale, model.transform.localScale.y,
+                model.transform.localScale.z),
+            < 0 => new Vector3(-initialXScale, model.transform.localScale.y,
+                model.transform.localScale.z),
+            _ => model.transform.localScale
         };
     }
 
@@ -58,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = moveDirection * (stats.MoveSpeed * Time.fixedDeltaTime);
         
-        animator.SetBool("Walking", this.moveDirection.magnitude > 0);
+        model.GetComponent<Animator>().SetBool("Walking", this.moveDirection.magnitude > 0);
     }
 
     public Vector2 GetLastDirection()
