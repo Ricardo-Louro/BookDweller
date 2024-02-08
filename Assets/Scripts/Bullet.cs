@@ -17,7 +17,9 @@ public class Bullet : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         direction = player.GetComponent<PlayerMovement>().GetLastDirection().normalized;
-        model.transform.eulerAngles = new Vector3(0,0,Mathf.Acos(Vector2.Dot(Vector2.left, direction) /(1 * direction.magnitude)) * Mathf.Rad2Deg );
+        model.transform.Rotate(new Vector3(0, 0,
+            Vector2.SignedAngle(Vector2.left, direction)));
+        
         rb = GetComponent<Rigidbody2D>();    
     }
 
