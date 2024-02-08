@@ -10,13 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8248049568787990947}
   - component: {fileID: 9011280491488886726}
-  - component: {fileID: 6718564793342426691}
+  - component: {fileID: 4667413320479964276}
   - component: {fileID: 4031898738901198066}
   - component: {fileID: 5203876809021291672}
   - component: {fileID: 6311084954525703418}
   - component: {fileID: 2986918368854795356}
   - component: {fileID: 5124731332108826670}
   - component: {fileID: 6417627107141720848}
+  - component: {fileID: 4944099818644859862}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 1179631725, guid: cb62c56840952a9479d54159213484e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,8 +92,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6718564793342426691
-CircleCollider2D:
+--- !u!70 &4667413320479964276
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,9 +124,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: -0.09}
+  m_Size: {x: 0.43, y: 0.92}
+  m_Direction: 0
 --- !u!50 &4031898738901198066
 Rigidbody2D:
   serializedVersion: 4
@@ -230,3 +231,24 @@ MonoBehaviour:
   experienceGoal: 500
   experienceGoalMultiPerLevel: 2
   playerAttack: {fileID: 2986918368854795356}
+--- !u!95 &4944099818644859862
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825681050866050279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acb5549b8a129614d9b685f81d010a94, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
