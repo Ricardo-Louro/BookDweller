@@ -32,12 +32,6 @@ public class Spawner : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
-    // Update is called once per frame
-    private void Update()
-    {
-        ShowHordeValue();
-    }
-
     private IEnumerator Spawn()
     {
         while(true)
@@ -113,10 +107,5 @@ public class Spawner : MonoBehaviour
     public void DeductHordeValue(int value)
     {
         currentHordeValue -= value;
-    }
-
-    public void ShowHordeValue()
-    {
-        Debug.Log(currentHordeValue);
     }
 }

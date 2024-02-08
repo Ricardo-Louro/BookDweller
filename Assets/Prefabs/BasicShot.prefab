@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
   stats: {fileID: -1608274836719737524}
   invulnerabilityDurationInSec: 0
   invulnerabilityBlinkInterval: 0
@@ -158,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 0
   moveSpeed: 0
-  defaultHealthPoints: 1
+  defaultHealthPoints: 2
   defaultMoveSpeed: 1
 --- !u!1 &6822002690035268824
 GameObject:

@@ -13,6 +13,10 @@ public class UISystem : MonoBehaviour
     [SerializeField] private TMP_Text       Score;
     [SerializeField] private Slider         HPBar;
 
+    [SerializeField] private PlayerAttack _playerAttack;
+    [SerializeField] private Slider BasicShotSlider;
+    [SerializeField] private Slider BigShotSlider;
+
     private ScoreSystem                     _scoreSystem;
     private PlayerXP                        _playerXp;
     private PlayerStats                     _playerStats;
