@@ -5,7 +5,9 @@ using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
+    private GameOver gameOver;
     private Spawner spawner;
+    private ScoreSystem scoreSys;
     [SerializeField] private Stats stats;
     [SerializeField] private float invulnerabilityDurationInSec = 0.5f;
     [SerializeField] private float invulnerabilityBlinkInterval = 0.1f;
@@ -20,6 +22,8 @@ public class Damageable : MonoBehaviour
 
     private void Start()
     {
+        scoreSys = FindObjectOfType<ScoreSystem>();
+        gameOver = FindObjectOfType<GameOver>();
         spawner = FindObjectOfType<Spawner>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _xpSystem = FindObjectOfType<PlayerXP>();
@@ -49,16 +53,16 @@ public class Damageable : MonoBehaviour
             
             if(tag is "Enemy")
             {
-                spawner.ShowHordeValue();
-                Debug.Log("TRYING TO COMPUTE SCORE");
                 ComputeScore();
-                spawner.ShowHordeValue();
-                Debug.Log("TRYING TO COMPUTE XP");
                 ComputeXp();
-                Debug.Log("TRYING TO DEDUCT!");
                 spawner.DeductHordeValue((stats as EnemyStats).SpawnValue);
             }
             
+            if(tag is "Player")
+            {
+                gameOver.EndGame("Main Menu", scoreSys.GetScore());
+            }
+
             Destroy(gameObject);
         }
         
@@ -95,5 +99,5 @@ public class Damageable : MonoBehaviour
     {
         _xpSystem.GainXP(GetComponent<EnemyStats>().ScoreValue);
         _uiSystem.UpdateXPUI();
-    }
+    }  
 }

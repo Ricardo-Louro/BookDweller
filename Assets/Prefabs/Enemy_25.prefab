@@ -210,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 0
   moveSpeed: 0
-  defaultHealthPoints: 8
+  defaultHealthPoints: 5
   defaultMoveSpeed: 60
   spawnValue: 25
   scoreValue: 1000

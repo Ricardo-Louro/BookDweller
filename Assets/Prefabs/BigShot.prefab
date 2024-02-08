@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 250
-  maxDistance: 5
+  maxDistance: 8
   model: {fileID: 6822002690035268824}
 --- !u!114 &7307013079085011510
 MonoBehaviour:

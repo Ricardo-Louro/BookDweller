@@ -71,8 +71,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09}
-  m_Size: {x: 0.43, y: 0.92}
+  m_Offset: {x: 0.024098694, y: -0.14087504}
+  m_Size: {x: 0.30682892, y: 0.7004342}
   m_Direction: 0
 --- !u!50 &4031898738901198066
 Rigidbody2D:
@@ -145,9 +145,9 @@ MonoBehaviour:
   basicShot: {fileID: 2577225588106626494, guid: 29d796a791d85f64b838a13986564e86, type: 3}
   bigShot: {fileID: 2577225588106626494, guid: 2ce8523d1e59a394f8a62ea8a153f5fc, type: 3}
   basicCooldown: 1
-  bigCooldown: 5
-  bigShotScaleUpgradeRatio: 1.1
-  basicCooldownUpgradeRatio: 0.8
+  bigCooldown: 3
+  bigShotScaleUpgradeRatio: 1.5
+  basicCooldownUpgradeRatio: 0.6
 --- !u!114 &5124731332108826670
 MonoBehaviour:
   m_ObjectHideFlags: 0
