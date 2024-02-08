@@ -551,6 +551,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2986918368854795356, guid: a991d3247b119d147b599e7c0058b799, type: 3}
+      propertyPath: bigShotScaleUpgradeRatio
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4825681050866050279, guid: a991d3247b119d147b599e7c0058b799, type: 3}
       propertyPath: m_Name
       value: Player
