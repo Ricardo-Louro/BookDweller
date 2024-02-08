@@ -8,48 +8,52 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject         bullet;
-    [SerializeField] private float              cooldown;
-    private float                               lastTimeAttacked;
-    private Vector3                             bulletScale = Vector3.zero;
+    [SerializeField] private GameObject         basicShot;
+    private bool                                bigShotUnlock;
+    [SerializeField] private GameObject         bigShot;
+    [SerializeField] private float              basicCooldown;
+    private float                               lastTimeBasicAttacked;
+    private Vector3                             bigShotScale = Vector3.zero;
     [SerializeField] private float              cooldownUpgradeRatio;
 
     // Start is called before the first frame update
     private void Start()
     {
-        bulletScale.x = 0.5f;
-        bulletScale.y = 0.5f;
-        ResetCooldown();
+        bigShotUnlock = false;
+        bigShotScale.x = 0.5f;
+        bigShotScale.y = 0.5f;
+        ResetBasicCooldown();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if(CheckCooldown())
+        if(CheckBasicCooldown())
         {
-            ResetCooldown();
-            Attack();
+            ResetBasicCooldown();
+            BasicAttack();
         }
+
+        i
     }
 
-    private bool CheckCooldown()
+    private bool CheckBasicCooldown()
     {
-        return cooldown < Time.time - lastTimeAttacked;
+        return basicCooldown < Time.time - lastTimeBasicAttacked;
     }
 
-    private void ResetCooldown()
+    private void ResetBasicCooldown()
     {
-        lastTimeAttacked = Time.time;
+        lastTimeBasicAttacked = Time.time;
     }
 
-    private void Attack()
+    private void BasicAttack()
     {
-        GameObject obj = Instantiate(bullet, transform.position, Quaternion.identity);
-        obj.transform.localScale = bulletScale;
+        GameObject obj_basicShot = Instantiate(basicShot, transform.position, Quaternion.identity);
     }
 
-    public void UpgradeCooldown()
+    public void UpgradeBasicCooldown()
     {
-        cooldown *= cooldownUpgradeRatio;
+        basicCooldown *= cooldownUpgradeRatio;
     }
 }
