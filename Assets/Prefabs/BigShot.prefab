@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 5385851759128601408}
   - component: {fileID: 4150793954376297276}
   - component: {fileID: 7307013079085011510}
-  - component: {fileID: -1943146423944713964}
-  - component: {fileID: -1608274836719737524}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: BigShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,8 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b32b4151b1a0544afff317cf986cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 500
-  maxDistance: 10
+  moveSpeed: 250
+  maxDistance: 5
   model: {fileID: 6822002690035268824}
 --- !u!114 &7307013079085011510
 MonoBehaviour:
@@ -128,38 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerHit: 1
---- !u!114 &-1943146423944713964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2577225588106626494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawner: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
-  stats: {fileID: -1608274836719737524}
-  invulnerabilityDurationInSec: 0
-  invulnerabilityBlinkInterval: 0
---- !u!114 &-1608274836719737524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2577225588106626494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 674f5c1e54614db47a0978382e4cfdbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 0
-  moveSpeed: 0
-  defaultHealthPoints: 1
-  defaultMoveSpeed: 1
 --- !u!1 &6822002690035268824
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,13 +152,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6822002690035268824}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.252, y: -0.041, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0.25200018, y: -0.04100001, z: 0}
   m_LocalScale: {x: 0.07692417, y: 0.07692417, z: 0.07692417}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4258377829592581841}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &261965887043704569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -234,7 +200,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4a6a40d8a83d4df4ba4e35fbe3dfaee1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: effb5fcad16e227469ed87fea9f11ce3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
