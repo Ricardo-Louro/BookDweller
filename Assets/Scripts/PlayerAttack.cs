@@ -8,11 +8,11 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private float cooldown;
-    private float lastTimeAttacked;
-    [SerializeField] private float bulletScaleRatio;
-    private Vector3 bulletScale = Vector3.zero;
+    [SerializeField] private GameObject         bullet;
+    [SerializeField] private float              cooldown;
+    private float                               lastTimeAttacked;
+    private Vector3                             bulletScale = Vector3.zero;
+    [SerializeField] private float              cooldownUpgradeRatio;
 
     // Start is called before the first frame update
     private void Start()
@@ -50,6 +50,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void UpgradeCooldown()
     {
-        cooldown *= 0.5f;
+        cooldown *= cooldownUpgradeRatio;
     }
 }

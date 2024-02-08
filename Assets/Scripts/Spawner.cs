@@ -28,13 +28,14 @@ public class Spawner : MonoBehaviour
         maxHordeValue = initialMaxHordeValue;
         currentHordeValue = 0;
         rotationVector = Vector3.zero;
-        StartCoroutine(DuplicateMaxHordeValue());
+        StartCoroutine(IncreaseMaxHordeValue());
         StartCoroutine(Spawn());
     }
 
     // Update is called once per frame
     private void Update()
     {
+        ShowHordeValue();
     }
 
     private IEnumerator Spawn()
@@ -66,8 +67,6 @@ public class Spawner : MonoBehaviour
                 Vector2 spawnLocation = player.transform.position + rotationVector.normalized * spawnRadius;
                 GameObject chosenEnemy;
                 
-                Debug.Log("Possible Enemies Count:" + possibleEnemies.Count);
-                Debug.Log("Current Horde Value: " + currentHordeValue);
                 if(possibleEnemies.Count == 0)
                 {
                     endOfLoop = true;
@@ -83,8 +82,7 @@ public class Spawner : MonoBehaviour
                 }
                 else
                 {
-                    int index = Random.Range(0, possibleEnemies.Count -1);
-                    Debug.Log(index);
+                    int index = Random.Range(0, possibleEnemies.Count);
 
                     chosenEnemy = Instantiate(possibleEnemies[index],
                                             new Vector3(spawnLocation.x,
@@ -103,7 +101,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private IEnumerator DuplicateMaxHordeValue()
+    private IEnumerator IncreaseMaxHordeValue()
     {
         while(true)
         {
@@ -112,8 +110,13 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void DeducteHordeValue(int value)
+    public void DeductHordeValue(int value)
     {
         currentHordeValue -= value;
+    }
+
+    public void ShowHordeValue()
+    {
+        Debug.Log(currentHordeValue);
     }
 }

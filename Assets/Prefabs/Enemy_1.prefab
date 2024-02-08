@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 8918385373883670342}
   - component: {fileID: -1143721902813994820}
   m_Layer: 8
-  m_Name: BaseEnemy
-  m_TagString: Untagged
+  m_Name: Enemy_1
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
   stats: {fileID: 8918385373883670342}
   invulnerabilityDurationInSec: 0.5
   invulnerabilityBlinkInterval: 0.1
