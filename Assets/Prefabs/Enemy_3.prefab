@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8918385373883670342}
   - component: {fileID: -1143721902813994820}
   m_Layer: 8
-  m_Name: Enemy_5
+  m_Name: Enemy_3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 54956443, guid: 7a8a45cef14761a4fb0bc1d938a6f00b, type: 3}
-  m_Color: {r: 0.21176457, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -210,10 +210,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 0
   moveSpeed: 0
-  defaultHealthPoints: 3
-  defaultMoveSpeed: 90
-  spawnValue: 5
-  scoreValue: 500
+  defaultHealthPoints: 1
+  defaultMoveSpeed: 125
+  spawnValue: 3
+  scoreValue: 200
 --- !u!95 &-1143721902813994820
 Animator:
   serializedVersion: 5

@@ -472,26 +472,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
-      propertyPath: spawnRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
-      propertyPath: spawnCooldown
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
-      propertyPath: enemyTypes.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
-      propertyPath: enemyTypes.Array.data[1]
-      value: 
-      objectReference: {fileID: 3188632438482870798, guid: 9fa3f227f87f7244394924a0d9056177, type: 3}
-    - target: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
-      propertyPath: hordeIncreasingMultiplier
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6318273808591839965, guid: a139261e407fa58469275cd9d28f439f, type: 3}
       propertyPath: m_Name
       value: Spawner

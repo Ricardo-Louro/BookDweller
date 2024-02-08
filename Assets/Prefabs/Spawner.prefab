@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyTypes:
   - {fileID: 3188632438482870798, guid: 2580fde7d4711394f839d54a18d6e1d9, type: 3}
+  - {fileID: 3188632438482870798, guid: 88f28559e5e1b704f854f16a9a205c48, type: 3}
   - {fileID: 3188632438482870798, guid: 9fa3f227f87f7244394924a0d9056177, type: 3}
+  - {fileID: 3188632438482870798, guid: a64d4738d7edd0c438bfc45403a812f4, type: 3}
   initialMaxHordeValue: 5
-  hordeIncreasingMultiplier: 0
-  spawnCooldown: 0
+  hordeIncreasingMultiplier: 1.5
+  spawnCooldown: 5
