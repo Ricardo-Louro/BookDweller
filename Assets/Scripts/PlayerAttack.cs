@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class PlayerAttack : MonoBehaviour
@@ -43,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
-        GameObject obj = Instantiate(bullet, transform);
+        GameObject obj = Instantiate(bullet, transform.position, Quaternion.identity);
         obj.transform.localScale = bulletScale;
     }
 
