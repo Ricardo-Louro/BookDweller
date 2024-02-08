@@ -743,7 +743,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8074f0303a487c54fa05d5af15761ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInstance: {fileID: 0}
   XPBar: {fileID: 577959700932650974}
   LVLCounter: {fileID: 5941123519987512160}
   Score: {fileID: 2339926851239375730}
@@ -1123,7 +1122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LVL: 1'
+  m_text: LVL 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b8419b1850b762742ae485e3eafdd0a9, type: 2}
   m_sharedMaterial: {fileID: 333647684840495952, guid: b8419b1850b762742ae485e3eafdd0a9, type: 2}

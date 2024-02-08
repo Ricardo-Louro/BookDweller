@@ -95,7 +95,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.12}
@@ -180,7 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0ca36e3dc1e3444b9a50a5c22c9e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawner: {fileID: 3804040509892183385, guid: a139261e407fa58469275cd9d28f439f, type: 3}
   stats: {fileID: 8918385373883670342}
   invulnerabilityDurationInSec: 0.5
   invulnerabilityBlinkInterval: 0.1
