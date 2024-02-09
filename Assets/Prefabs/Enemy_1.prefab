@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 8918385373883670342}
-  invulnerabilityDurationInSec: 0.5
+  invulnerabilityDurationInSec: 0.01
   invulnerabilityBlinkInterval: 0.1
 --- !u!114 &7191398526756651447
 MonoBehaviour:

@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 0
   moveSpeed: 0
-  defaultHealthPoints: 2
+  defaultHealthPoints: 1
   defaultMoveSpeed: 1
 --- !u!1 &6822002690035268824
 GameObject:
