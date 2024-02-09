@@ -19,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
     private Vector3                             bigShotScale = Vector3.zero;
     [SerializeField] private float              bigShotScaleUpgradeRatio;
     [SerializeField] private float              basicCooldownUpgradeRatio;
+    [SerializeField] private PlayAudio bigShotAudio;
+    [SerializeField] private PlayAudio basicShotAudio;
 
     // Start is called before the first frame update
     private void Start()
@@ -70,12 +72,14 @@ public class PlayerAttack : MonoBehaviour
     private void BasicAttack()
     {
         GameObject obj_basicShot = Instantiate(basicShot, transform.position, Quaternion.identity);
+        basicShotAudio.Play();
     }
 
     private void BigAttack()
     {
         GameObject obj_bigShot = Instantiate(bigShot, transform.position, Quaternion.identity);
         obj_bigShot.transform.localScale = bigShotScale;
+        bigShotAudio.Play();
     }
 
     public void UpgradeBasicCooldown()

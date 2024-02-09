@@ -11,6 +11,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] private Stats stats;
     [SerializeField] private float invulnerabilityDurationInSec = 0.5f;
     [SerializeField] private float invulnerabilityBlinkInterval = 0.1f;
+    [SerializeField] private PlayAudio HurtAudio;
 
     private GameObject _collidingObject;
     private bool _invulnerable;
@@ -36,6 +37,7 @@ public class Damageable : MonoBehaviour
         _collidingObject = other.gameObject;
         Damaging incomingDamaging = _collidingObject.GetComponent<Damaging>();
         if(!_invulnerable) GetHit(incomingDamaging.DamagePerHit);
+        PlayAttackSound(incomingDamaging.gameObject);
     }
     
     private void GetHit(int damageReceived)
@@ -46,7 +48,10 @@ public class Damageable : MonoBehaviour
         {
             _uiSystem.UpdateHPBar();
             gameObject.GetComponentInChildren<Animator>().SetTrigger("Hurt");
+            
         }
+        
+        if(HurtAudio is not null) HurtAudio.Play();
         
         if (stats.HP <= 0)
         {
@@ -99,5 +104,11 @@ public class Damageable : MonoBehaviour
     {
         _xpSystem.GainXP(GetComponent<EnemyStats>().ScoreValue);
         _uiSystem.UpdateXPUI();
-    }  
+    }
+
+    private void PlayAttackSound(GameObject attacker)
+    {
+        var attackerAudio = attacker.GetComponentInChildren<PlayAudio>();
+        if (attackerAudio is not null) attackerAudio.Play();
+    }
 }
