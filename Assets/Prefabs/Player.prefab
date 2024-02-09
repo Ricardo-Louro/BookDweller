@@ -144,9 +144,9 @@ MonoBehaviour:
   randomizePitch: 0
   pitchRandomRange: 0.2
   _audioClip:
-  - {fileID: 8300000, guid: 108c007a54450aa43adbc560e17c9a91, type: 3}
-  - {fileID: 8300000, guid: 118ca10e71a2ead45b2ff7b0bec4abdc, type: 3}
-  - {fileID: 8300000, guid: 08028109e344982498dee8e63179d4d7, type: 3}
+  - {fileID: 8300000, guid: d4ec3fcf0b7c78a44aa15df1d7b2b9d2, type: 3}
+  - {fileID: 8300000, guid: 8c892bd492d0f57439db00ac48edbd96, type: 3}
+  - {fileID: 8300000, guid: be6d2181554d3544e8baa7292780e3db, type: 3}
   _audioMixer: {fileID: 24300002, guid: 398139b6851c26140937c226fd62cab8, type: 2}
   _audioSource: {fileID: 3479055668659845336}
   _isLoop: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   randomizePitch: 0
   pitchRandomRange: 0.2
   _audioClip:
-  - {fileID: 8300000, guid: ce813b5fa9bdc034db9cf592c76c5373, type: 3}
+  - {fileID: 8300000, guid: a55e6ecda2e3ff54b988a33b8aac05e6, type: 3}
   _audioMixer: {fileID: 24300002, guid: 398139b6851c26140937c226fd62cab8, type: 2}
   _audioSource: {fileID: 7472685508833520817}
   _isLoop: 0
@@ -465,6 +465,7 @@ MonoBehaviour:
   stats: {fileID: 5124731332108826670}
   invulnerabilityDurationInSec: 2
   invulnerabilityBlinkInterval: 0.1
+  HurtAudio: {fileID: 86240319507886530}
 --- !u!114 &2986918368854795356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +484,8 @@ MonoBehaviour:
   bigCooldown: 3
   bigShotScaleUpgradeRatio: 1.5
   basicCooldownUpgradeRatio: 0.6
+  bigShotAudio: {fileID: 371086417036636027}
+  basicShotAudio: {fileID: 775166177064174520}
 --- !u!114 &5124731332108826670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,9 +774,9 @@ MonoBehaviour:
   pitchRandomRange: 0.2
   _audioClip:
   - {fileID: 8300000, guid: dc28ee4cd96a9e34a949d2bf2834eb8d, type: 3}
-  - {fileID: 8300000, guid: 7402737fa2355b4459d5e96f388d24f8, type: 3}
-  - {fileID: 8300000, guid: 22447b718f133fb4ea8e213b717508ff, type: 3}
-  - {fileID: 8300000, guid: 4e56f756cb4bde3479bc65d836f239ce, type: 3}
+  - {fileID: 8300000, guid: 19e2b56ee3beb27428447065c6f419d3, type: 3}
+  - {fileID: 8300000, guid: ff9d5cc12f55de246ab87edc558fdf57, type: 3}
+  - {fileID: 8300000, guid: 09988d7b290f9fc4698c122dc2e27fa3, type: 3}
   _audioMixer: {fileID: 24300002, guid: 398139b6851c26140937c226fd62cab8, type: 2}
   _audioSource: {fileID: 7090141034313068354}
   _isLoop: 0
