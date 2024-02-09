@@ -785,6 +785,9 @@ MonoBehaviour:
   LVLCounter: {fileID: 5941123519987512160}
   Score: {fileID: 2339926851239375730}
   HPBar: {fileID: 6159475475373360355}
+  _playerAttack: {fileID: 0}
+  BasicShotSlider: {fileID: 0}
+  BigShotSlider: {fileID: 0}
 --- !u!1 &4597844720017293141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,8 +1824,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'SCORE: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a8273adb25194da469ba345487c4fe89, type: 2}
-  m_sharedMaterial: {fileID: 722077356732780691, guid: a8273adb25194da469ba345487c4fe89, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a4c02a2ff8524a24fadfb9ccee12fd64, type: 2}
+  m_sharedMaterial: {fileID: 8923048392864811292, guid: a4c02a2ff8524a24fadfb9ccee12fd64, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1846,8 +1849,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 180
+  m_fontSizeBase: 180
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
