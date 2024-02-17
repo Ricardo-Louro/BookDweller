@@ -11,6 +11,7 @@ public class PlayerXP : MonoBehaviour
     [SerializeField] private int                experienceGoalMultiPerLevel;
     private int                                 currentLevel;
     [SerializeField] private int                bigShotUnlockLevel;
+    [SerializeField] private int aoeShotUnlockLevel;
 
     [SerializeField] private PlayerAttack       playerAttack;
 
@@ -51,6 +52,9 @@ public class PlayerXP : MonoBehaviour
         {
             playerAttack.UnlockBigShot();
         }
+        
+        if(currentLevel == aoeShotUnlockLevel) playerAttack.UnlockWaterAoe();
+        if(currentLevel >= aoeShotUnlockLevel) playerAttack.UpgradeAoe();
 
         playerAttack.UpgradeBasicCooldown();
 

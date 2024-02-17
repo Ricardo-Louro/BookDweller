@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float              spawnCooldown;
     private IList<GameObject>                   possibleEnemies;
     private bool                                endOfLoop;
+    private bool gameStart = true;
 
     // Start is called before the first frame update
     private void Start()
@@ -36,8 +37,9 @@ public class Spawner : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(spawnCooldown);
+            if(!gameStart) yield return new WaitForSeconds(spawnCooldown);
             endOfLoop = false;
+            gameStart = false;
 
             while (!endOfLoop)
             {

@@ -13,6 +13,7 @@ public class BasicEnemyMovement : MonoBehaviour
     private float playerDistance = 0;
     private Vector2 _moveDirection;
     private float _defaultXScale;
+    private Vector2 walkDirectionReference;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class BasicEnemyMovement : MonoBehaviour
         _rigidbody = gameObject.GetComponent<Rigidbody2D>();
         _moveDirection = Vector2.zero;
         _defaultXScale = transform.localScale.x;
+        walkDirectionReference = new Vector2();
     }
 
     // Update is called once per frame
@@ -34,19 +36,18 @@ public class BasicEnemyMovement : MonoBehaviour
 
     private void SetMoveDirection()
     {
-        if (playerTransform is null) 
+        if (playerTransform is not null)
         {
-            _rigidbody.velocity = Vector2.zero;
-            return;
+            walkDirectionReference = playerTransform.position;
         }
 
-        _moveDirection.x = playerTransform.position.x - transform.position.x;
-        _moveDirection.y = playerTransform.position.y - transform.position.y;
+        _moveDirection.x = walkDirectionReference.x - transform.position.x;
+        _moveDirection.y = walkDirectionReference.y - transform.position.y;
     }
 
     private void SetFacingDirection()
     {
-        if (playerTransform.position.x < transform.position.x)
+        if (walkDirectionReference.x < transform.position.x)
             transform.localScale = new Vector3(_defaultXScale,
                 transform.localScale.y, transform.localScale.z);
         else

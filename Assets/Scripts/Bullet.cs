@@ -10,7 +10,9 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D                     rb;
     private Vector2                         direction;
     [SerializeField] private float          maxDistance;
+    [SerializeField] private float lifeTime;
     [SerializeField] private GameObject model;
+    [SerializeField] private bool followPlayer;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,12 +22,14 @@ public class Bullet : MonoBehaviour
         model.transform.Rotate(new Vector3(0, 0,
             Vector2.SignedAngle(Vector2.left, direction)));
         
-        rb = GetComponent<Rigidbody2D>();    
+        rb = GetComponent<Rigidbody2D>();
+
+        StartCoroutine(LifeTime());
     }
 
     private void Update()
     {
-        DestroyOnMaxDistance();
+        //DestroyOnMaxDistance();
     }
 
     // Update is called once per frame
@@ -39,7 +43,18 @@ public class Bullet : MonoBehaviour
 
     private void Move()
     {
+        if (followPlayer)
+        {
+            transform.position = player.transform.position;
+            return;
+        }
         rb.velocity = direction * (moveSpeed * Time.fixedDeltaTime);
+    }
+
+    private IEnumerator LifeTime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+        Destroy(gameObject);
     }
 
     private void DestroyOnMaxDistance()

@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 500
   maxDistance: 10
+  lifeTime: 1
   model: {fileID: 6822002690035268824}
 --- !u!114 &7307013079085011510
 MonoBehaviour:
@@ -143,6 +144,7 @@ MonoBehaviour:
   stats: {fileID: -1608274836719737524}
   invulnerabilityDurationInSec: 0
   invulnerabilityBlinkInterval: 0
+  HurtAudio: {fileID: 0}
 --- !u!114 &-1608274836719737524
 MonoBehaviour:
   m_ObjectHideFlags: 0

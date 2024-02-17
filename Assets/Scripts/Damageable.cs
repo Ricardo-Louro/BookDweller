@@ -36,7 +36,10 @@ public class Damageable : MonoBehaviour
     {
         _collidingObject = other.gameObject;
         Damaging incomingDamaging = _collidingObject.GetComponent<Damaging>();
-        if(!_invulnerable) GetHit(incomingDamaging.DamagePerHit);
+        
+        if (_invulnerable && incomingDamaging is null) return;
+        
+        GetHit(incomingDamaging.DamagePerHit);
         PlayAttackSound(incomingDamaging.gameObject);
     }
     
